@@ -2,6 +2,8 @@
 Designed to effectively and quickly create a training template for a retail store team, this application will feature different decks that inside will contain information on specific products based on the activities they were designed to belong to. Inside of each deck, the user will find a product, along with any information and descriptions of the product, including updates for the new season, partnered together with an image. 
 
 # Technologies that will be used:
+- HTML
+- CSS
 - Javascript
 - Liquid
 - Bootstrap
@@ -25,13 +27,6 @@ Designed to effectively and quickly create a training template for a retail stor
 
   
   # Entity Relationship Diagram
-```  
-COMING SOON
-```
-```
-COMING SOON
-```
-```
-COMING SOON
-```
+![ERD](https://user-images.githubusercontent.com/111713666/194800033-beab33c4-afd6-4d78-acde-5fdf6ef454cf.jpg)
+
 
