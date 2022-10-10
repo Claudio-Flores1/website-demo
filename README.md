@@ -12,11 +12,16 @@ Designed to effectively and quickly create a training template for a retail stor
 - Incorporating seeded data, this will include prouct name, information/description, & current updates for the season.
 
 # User story: 
-  - As a user, I want the ability to sign up and sign in.
-  - As a user, I want the ability to create and save a password. 
-  - As a user, I want the ability to add new decks to the application, and later access it. 
-  - As a user, I want the ability to update and delete existing decks. 
-  - As a user, I want the ability to create and delete comments for my decks.
+  - As a user, I want the ability to sign up.
+  - As a user, I want the ability to sign sign in.
+  - As a user, I want the ability to create a password. 
+  - As a user, I want the ability to save a password. 
+  - As a user, I want the ability to add new decks.
+  - As a user, I want the ability to access the decks in the application.
+  - As a user, I want the ability to update existing decks.
+  - As a user, I want the ability to delete decks.
+  - As a user, I want the ability to create comments.
+  - As a user, I want the ability to delete comments.
   - As a user, I want the ability to log out. 
   
   # Wireframes
