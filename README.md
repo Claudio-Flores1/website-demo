@@ -37,3 +37,21 @@ Designed to effectively and quickly create a training template for a retail stor
 ![ERD](https://user-images.githubusercontent.com/111713666/194897142-6dce4e50-0a71-4fd0-92d7-2320ff7a4f00.jpg)
 
 
+# Weekly Planning
+Monday-Tuesday
+- Constructing the backend 
+- Models, Controllers, Comments
+```
+```
+Wednesday-Thursday
+- Front end development
+- Bootstrap, Views, Liquid.
+```
+```
+Friday
+- Cleaning up code and continued check of app functionality 
+```
+```
+Saturday
+- Final checks 
+- Submit application
