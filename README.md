@@ -34,6 +34,6 @@ Designed to effectively and quickly create a training template for a retail stor
 
   
   # Entity Relationship Diagram
-![ERD](https://user-images.githubusercontent.com/111713666/194800033-beab33c4-afd6-4d78-acde-5fdf6ef454cf.jpg)
+![ERD](https://user-images.githubusercontent.com/111713666/194897142-6dce4e50-0a71-4fd0-92d7-2320ff7a4f00.jpg)
 
 
