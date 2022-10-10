@@ -9,12 +9,14 @@ Designed to effectively and quickly create a training template for a retail stor
 - Bootstrap
 - Mongo
 - Express
+- Incorporating seeded data, this will include prouct name, information/description, & current updates for the season.
 
 # User story: 
   - As a user, I want the ability to sign up and sign in.
   - As a user, I want the ability to create and save a password. 
   - As a user, I want the ability to add new decks to the application, and later access it. 
   - As a user, I want the ability to update and delete existing decks. 
+  - As a user, I want the ability to create and delete comments for my decks.
   - As a user, I want the ability to log out. 
   
   # Wireframes
