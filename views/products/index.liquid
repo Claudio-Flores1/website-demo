@@ -1,0 +1,27 @@
+{% layout 'layout.liquid' %}
+{% block content %}
+    <div>
+        <h2 class="display-6">All Products</h2>
+        <div class="row">
+            {% for product in products %}
+                <div class="card" style="width: 18rem">
+                    <h5 class="card-header">{{product.name}}</h5>
+                    <div class="card-body">
+                        <h5 class="card-tproduct
+                            {% if product.waterProof %}
+                                Waterproof
+                            {% else %}
+                                Not Waterproof
+                            {% endif %}
+                        </h5>
+                        <p class="card-text">The color of this {{product.name}} is {{product.color}}</p>
+                        <p class="card-text">There are {{product.quantity}} product(s)</p>
+                        <a class="btn btn-info" href="/products/{{product.id}}">
+                            View {{product.name}}
+                        </a>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+{% endblock %}
