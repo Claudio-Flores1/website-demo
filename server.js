@@ -12,7 +12,7 @@ const middleware = require('./utils/middleware')
 const app = require('liquid-express-views')(express())
 
 middleware(app)
-
+app.use(express.static('public'));
 /////////////////////////////////////////////
 // Home Route
 /////////////////////////////////////////////

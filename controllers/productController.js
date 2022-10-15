@@ -35,6 +35,25 @@ router.get("/", (req, res) => {
       
 })
 
+
+///////// FIX THIS
+router.post("/", (req, res) => {
+    // console.log("req.body initially", req.body)
+    req.body.updated = req.body.updated === 'on' ? true : false
+    req.body.waterProof = req.body.waterProof === 'on' ? true : false
+    console.log("req.body initially", req.body)
+    console.log('req.body after changing checkbox value', req.body)
+    Product.create(req.body)
+    .then(data => {
+        res.json(data)
+    })
+    // .then(() => {
+    //     res.redirect('/products/show')
+    // })
+})
+///////////// FIX THIS
+
+
 // GET for new fruit
 // renders the form to create a jacket
 router.get('/new', (req, res) => {
@@ -79,19 +98,19 @@ router.get("/edit/:id", (req, res) => {
 
 // POST request
 // CREATE route -> gives the ability to create new products
-router.post("/", (req, res) => {
-    req.body.waterProof = req.body.waterProof === 'on' ? true : false
-    req.body.owner = req.session.userId
-    console.log('the product from the form', req.body)
-    Product.create(req.body)
-        .then(product => {
-            const username = req.session.username
-            const loggedIn = req.session.loggedIn
-            const userId = req.session.userId
-            res.redirect('/products')
-        })
-        .catch(err => res.redirect(`/error?error=${err}`))
-})
+// router.post("/", (req, res) => {
+//     req.body.waterProof = req.body.waterProof === 'on' ? true : false
+//     req.body.owner = req.session.userId
+//     console.log('the product from the form', req.body)
+//     Product.create(req.body)
+//         .then(product => {
+//             const username = req.session.username
+//             const loggedIn = req.session.loggedIn
+//             const userId = req.session.userId
+//             res.redirect('/products')
+//         })
+//         .catch(err => res.redirect(`/error?error=${err}`))
+// })
 
 // SHOW request
 // READ route -> finds and displays a single resource
@@ -130,32 +149,6 @@ router.put("/:id", (req, res) => {
         })
         .catch(err => res.redirect(`/error?error=${err}`))
 })
-
-
-//UPDATED ROUT - DOESN'T WORK//
-
-router.put("/:id", (req, res) => {
-    console.log("req.body initially", req.body)
-    const id = req.params.id
-
-    req.body.updated = req.body.updated === 'on' ? true : false
-    console.log('req.body after changing checkbox value', req.body)
-    Product.findById(id)
-        .then(product => {
-            if (product.owner == req.session.userId) {
-                res.sendStatus(204)
-                return product.updateOne(req.body)
-            } else {
-                res.sendStatus(401)
-            }
-        })
-        .then(() => {
-            res.redirect(`/products/${id}`)
-        })
-        .catch(err => res.redirect(`/error?error=${err}`))
-})
-
-//////////////////////////////////////////////////////////////////////////
 
 
 router.delete('/:id', (req, res) => {

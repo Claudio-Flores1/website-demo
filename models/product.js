@@ -18,6 +18,7 @@ const productSchema = new Schema({
     waterProof: Boolean,
     family: String,
     updated: Boolean,
+    info: String,
     owner: {
         type: Schema.Types.ObjectId,
         ref: 'User'

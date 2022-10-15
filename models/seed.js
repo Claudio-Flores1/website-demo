@@ -11,7 +11,7 @@ const db = mongoose.connection
 
 db.on('open', () => {
     const startProducts = [
-        { name: "Andessa", color: "Color", waterProof: true, family: "Whiteline", updated: true},
+        { name: "Andessa", color: "Color", waterProof: true, family: "Whiteline", updated: true, info: "This would show what the updates for this specific product are inside of the card"},
         { name: "Macai", color: "Color", waterProof: true, family: "Whiteline", updated: true},
         { name: "Sabre", color: "Color", waterProof: true, family: "Whiteline", updated: true},
         { name: "Alpha SV", color: "Color", waterProof: true, family: "Ascent", updated: false},

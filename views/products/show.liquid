@@ -10,7 +10,7 @@
                     Not Waterproof
                 {% endif %}
             </h4>
-            <h6>The color of this Jacket is: {{product.color}}</h6>
+            <h6>The color of this Product is: {{product.color}}</h6>
             {% if product.owner == userId %}
                 <div class="btn-group">
                     <a class="btn btn-primary" href="/products/edit/{{product.id}}">Edit</a>
@@ -25,9 +25,7 @@
                             {% if product.updated %}
                                 For this season, these are the following updates
                                 <br>
-                                newer face fabric: 40 denier
-                                <br>
-                                newer fit and aesthetic redesign
+                                {{ product.info }}
                             {% else %}
                                 It hasn't been updated yet, maybe next year something will change
                             {% endif %}
