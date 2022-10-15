@@ -11,11 +11,15 @@ const db = mongoose.connection
 
 db.on('open', () => {
     const startProducts = [
-        { name: "Alpha SV", color: "24k", waterProof: true, quantity: 2 },
-        { name: "Beta SV", color: "kingfisher", waterProof: true, quantity: 8 },
-        { name: "Gamma MX", color: "black", waterProof: false, quantity: 1 },
-        { name: "Beta ", color: "offlime", waterProof: true, quantity: 5 },
-        { name: "Atom LT", color: "timelapse", waterProof: false, quantity: 7 },
+        { name: "Andessa", color: "Color", waterProof: true, family: "Whiteline", updated: true},
+        { name: "Macai", color: "Color", waterProof: true, family: "Whiteline", updated: true},
+        { name: "Sabre", color: "Color", waterProof: true, family: "Whiteline", updated: true},
+        { name: "Alpha SV", color: "Color", waterProof: true, family: "Ascent", updated: false},
+        { name: "Beta AR", color: "Color", waterProof: true, family: "Essentials", updated: false},
+        { name: "Monitor Down Coat", color: "Color", waterProof: true, family: "Veilance", updated: true},
+        { name: "Therme", color: "Color", waterProof: true, family: "Everyday", updated: true},
+        { name: "Norvan LD 3", color: "Color", waterProof: true, family: "Trail-Running", updated: true},
+
     ]
 
     Product.deleteMany({})

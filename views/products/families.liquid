@@ -1,0 +1,18 @@
+{% layout 'layout.liquid' %}
+{% block content %}
+    <div>
+        <h2 class="display-6">F/W 22'</h2>
+        <div class="row">
+            {% for family in families %}
+                <div class="card" style="width: 20rem">
+                    <h5 class="card-header">{{family}}</h5>
+                    <div class="card-body">
+                        <a class="btn btn-info" href="/products?family={{family}}">
+                            View
+                        </a>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+{% endblock %}

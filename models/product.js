@@ -11,12 +11,13 @@ const commentSchema = require('./comment')
 
 const { Schema, model } = mongoose
 
-// jackets schema
+// product schema
 const productSchema = new Schema({
     name: String,
     color: String,
     waterProof: Boolean,
-    quantity: Number,
+    family: String,
+    updated: Boolean,
     owner: {
         type: Schema.Types.ObjectId,
         ref: 'User'

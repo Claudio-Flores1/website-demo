@@ -20,19 +20,28 @@
                 value="{{ product.body }}" 
                 class="form-control"
             >
-            <label class="form-label">Amount:</label>
+            <label class="form-label">Family:</label>
             <input 
-                type="number" 
-                name="amount"
-                value="{{ product.amount }}"
+                type="text" 
+                name="family"
+                value="{{ product.family }}"
                 class="form-control"
             >
-            <label class="form-label">Ready:</label>
+              <label class="form-label">Updated:</label>
+            <input 
+               type="checkbox" 
+                name="updated" 
+                class="form-check-input"
+                {% if product.updated %}
+                    checked
+                {% endif %}
+            >
+            <label class="form-label">Waterproof:</label>
             <input 
                 type="checkbox" 
-                name="ready" 
+                name="waterproof" 
                 class="form-check-input"
-                {% if product.ready %}
+                {% if product.waterProof %}
                     checked
                 {% endif %}
             >

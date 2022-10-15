@@ -14,21 +14,25 @@ const router = express.Router()
 ////////////////////////////////////////////
 
 router.get("/", (req, res) => {
-    Product.find({})
-        .populate("comments.author", "username")
-        .then(products => {
-            const username = req.session.username
-            const loggedIn = req.session.loggedIn
-            const userId = req.session.userId
-            // console.log(fruits)
-            // this is fine for initial testing
-            // res.send(fruits)
-            // this the preferred method for APIs
-            // res.json({ fruits: fruits })
-            // here, we're going to render a page, but we can also send data that we got from the database to that liquid page for rendering
-            res.render('products/index', { products, username, loggedIn, userId })
-        })
-        .catch(err => res.redirect(`/error?error=${err}`))
+    const username = req.session.username
+    const loggedIn = req.session.loggedIn
+    const userId = req.session.userId
+    const productFamily = req.query.family
+    if (productFamily) {
+         Product.find({ family: productFamily})
+         .populate("comments.author", "username")
+         .then(products => {
+             res.render('products/products', { products, username, loggedIn, userId })
+         })
+         .catch(err => res.redirect(`/error?error=${err}`))
+    } else {
+        Product.distinct("family")
+            .then(families => {
+                res.render('products/families', { families, username, loggedIn, userId })
+            })
+            .catch(err => res.redirect(`/error?error=${err}`)) 
+    }
+      
 })
 
 // GET for new fruit
@@ -42,21 +46,17 @@ router.get('/new', (req, res) => {
 })
 
 // GET request
-// only jackets owned by logged in user
+// only products owned by logged in user
 // we're going to build another route, that is owner specific, to list all the fruits owned by a certain(logged in) user
 router.get('/mine', (req, res) => {
-    // find the jackets, by ownership
     Product.find({ owner: req.session.userId })
-        // then display the fruits
         .then(products => {
             const username = req.session.username
             const loggedIn = req.session.loggedIn
             const userId = req.session.userId
 
-            // res.status(200).json({ fruits: fruits })
             res.render('products/index', { products, username, loggedIn, userId })
         })
-        // or throw an error if there is one
         .catch(err => res.redirect(`/error?error=${err}`))
 })
 
@@ -78,7 +78,7 @@ router.get("/edit/:id", (req, res) => {
 })
 
 // POST request
-// CREATE route -> gives the ability to create new fruits
+// CREATE route -> gives the ability to create new products
 router.post("/", (req, res) => {
     req.body.waterProof = req.body.waterProof === 'on' ? true : false
     req.body.owner = req.session.userId
@@ -103,14 +103,13 @@ router.get("/:id", (req, res) => {
             const username = req.session.username
             const loggedIn = req.session.loggedIn
             const userId = req.session.userId
-            // res.json({ jacket: jacket })
             res.render('products/show', { product, username, loggedIn, userId })
         })
         .catch(err => res.redirect(`/error?error=${err}`))
 })
 
 // PUT request
-// UPDATE route -> updates a specific fruit
+// UPDATE route -> updates a specific product
 router.put("/:id", (req, res) => {
     console.log("req.body initially", req.body)
     const id = req.params.id
@@ -132,17 +131,32 @@ router.put("/:id", (req, res) => {
         .catch(err => res.redirect(`/error?error=${err}`))
 })
 
-// DELETE request
-// DESTROY route -> finds and deletes a singel resource(fruit)
-// router.delete("/:id", (req, res) => {
-//     // grab the id from the request
-//     const id = req.params.id
-//     Jacket.findByIdAndRemove(id)
-//         .then(() => {
-//             res.sendStatus(204)
-//         })
-//         .catch(err => res.json(err))
-// })
+
+//UPDATED ROUT - DOESN'T WORK//
+
+router.put("/:id", (req, res) => {
+    console.log("req.body initially", req.body)
+    const id = req.params.id
+
+    req.body.updated = req.body.updated === 'on' ? true : false
+    console.log('req.body after changing checkbox value', req.body)
+    Product.findById(id)
+        .then(product => {
+            if (product.owner == req.session.userId) {
+                res.sendStatus(204)
+                return product.updateOne(req.body)
+            } else {
+                res.sendStatus(401)
+            }
+        })
+        .then(() => {
+            res.redirect(`/products/${id}`)
+        })
+        .catch(err => res.redirect(`/error?error=${err}`))
+})
+
+//////////////////////////////////////////////////////////////////////////
+
 
 router.delete('/:id', (req, res) => {
     const productId = req.params.id

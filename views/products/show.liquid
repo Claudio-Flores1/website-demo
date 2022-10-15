@@ -10,7 +10,7 @@
                     Not Waterproof
                 {% endif %}
             </h4>
-            <h4>The color of this Jacket is: {{product.color}}</h4>
+            <h6>The color of this Jacket is: {{product.color}}</h6>
             {% if product.owner == userId %}
                 <div class="btn-group">
                     <a class="btn btn-primary" href="/products/edit/{{product.id}}">Edit</a>
@@ -21,7 +21,17 @@
             {% endif %}
         </article>
          <hr>
-        <h4>comments</h4>
+        <h6 class="card-product">
+                            {% if product.updated %}
+                                For this season, these are the following updates
+                                <br>
+                                newer face fabric: 40 denier
+                                <br>
+                                newer fit and aesthetic redesign
+                            {% else %}
+                                It hasn't been updated yet, maybe next year something will change
+                            {% endif %}
+                        </h6>
         <hr>
         {% if loggedIn %}
             <div class="col-md-6">
@@ -29,7 +39,7 @@
                     <fieldset>
                         <legend>Add Comment</legend>
                         <label class="form-label">comment:</label>
-                        <input class="form-control" type="text" placeholder="enter your comment..." name="note" required>
+                        <input class="form-control" type="text" placeholder="Create a new comment" name="note" required>
                     </fieldset>
                     <input class="btn btn-success" type="submit" value="add comment">
                 </form>
@@ -49,7 +59,7 @@
                 </div>
             </div>
         {% else %}
-            <small>no comments yet...</small>
+            <small>There are no comments yet</small>
         {% endif %}
     </div>
 {% endblock %}

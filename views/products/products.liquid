@@ -1,0 +1,34 @@
+{% layout 'layout.liquid' %}
+{% block content %}
+    <div>
+        <h2 class="display-6">F/W 22'</h2>
+        <div class="row">
+            {% for product in products %}
+                <div class="card" style="width: 20rem">
+                    <h5 class="card-header">{{product.name}}</h5>
+                    <div class="card-body">
+                        <h5 class="card-product">
+                            {% if product.waterProof %}
+                                Utilizes GoreTex
+                            {% else %}
+                                Not Waterproof
+                            {% endif %}
+                        </h5>
+                        <p class="card-text">The color of the {{product.name}} is {{product.color}}</p>
+                        <p class="card-text">{{product.name}} belongs to {{product.family}}</p>
+                         <h6 class="card-product">
+                            {% if product.updated %}
+                                This {{product.name}} has been updated for 2022
+                            {% else %}
+                                It hasn't been updated yet
+                            {% endif %}
+                        </h6>
+                        <a class="btn btn-info" href="/products/{{product.id}}">
+                            View
+                        </a>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+{% endblock %}
