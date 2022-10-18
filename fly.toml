@@ -10,8 +10,8 @@ processes = []
 
 [env]
   PORT = "8080"
-  SECRET = C06f02kq0117
-  DEPLOYED_URL = mongodb+srv://ClaudioFlores:Cflores4.@fullstackretailtraining.smyw3i6.mongodb.net/fullstackretailtraining?retryWrites=true&w=majority
+  SECRET = "C06f02kq0117"
+  DEPLOYED_URL = "mongodb+srv://ClaudioFlores:Cflores4.@fullstackretailtraining.smyw3i6.mongodb.net/fullstackretailtraining?retryWrites=true&w=majority"
 
 
 [experimental]
