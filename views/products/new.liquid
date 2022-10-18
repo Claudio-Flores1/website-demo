@@ -1,53 +1,32 @@
 {% layout 'layout.liquid' %}
 {% block content %}
 
-    <div class="container-sm">
-        <form action="/products" method="POST">
-            <fieldset>
-                <legend>Create A New Product</legend>
-                <label class="form-label">Name: </label>
-                <input
-                    class="form-control"
-                    type="text"
-                    name="name"
-                    placeholder="product name"
-                >
-                
-                <label class="form-label">Color: </label>
-                <input
-                    class="form-control"
-                    type="text"
-                    name="color"
-                    placeholder="product color"
-                >
-                  
-                  <label class="form-label">Family: </label>
-                <input
-                    class="form-control"
-                    type="text"
-                    name="family"
-                    placeholder="family"
-                >
-                      
-                      <label class="form-label">Updated: </label>
-                <input
-                    class="form-check-input"
-                    type="checkbox"
-                    name="updated"
-                >
-                    <label class="form-label">GoreTex: </label>
-                <input
-                    class="form-check-input"
-                    type="checkbox"
-                    name="waterProof"
-                >
-            </fieldset>
-            <input
-                class="btn btn-info"
-                type="submit"
-                value="Submit"
-            >
-        </form>
-    </div>
+  <div class="container-sm">
+    <form action="/products" method="POST">
+      <fieldset>
+        <legend>Did we forget something? Fill out the form and let us know!</legend>
+        <label class="form-label">Name:
+        </label>
+        <input class="form-control" type="text" name="name" placeholder="product name">
+
+        <label class="form-label">Color:
+        </label>
+        <input class="form-control" type="text" name="color" placeholder="product color">
+
+        <label class="form-label">Family:
+        </label>
+        <input class="form-control" type="text" name="family" placeholder="family">
+
+        <label class="form-label">Updated:
+        </label>
+        <input class="form-check-input" type="checkbox" name="updated">
+        
+        <label class="form-label">GoreTex:
+        </label>
+        <input class="form-check-input" type="checkbox" name="waterProof">
+      </fieldset>
+      <input class="btn btn-info" type="submit" value="Submit">
+    </form>
+  </div>
 
 {% endblock %}
