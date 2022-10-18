@@ -1,12 +1,12 @@
+
+
+@import url('https://fonts.googleapis.com/css2?family=Oswald&display=swap');
+
+@import '~bootstrap-icons/font/bootstrap-icons';
+
 .form-label{
   width: 240px;
 } 
-@import url('https://fonts.googleapis.com/css2?family=Oswald&display=swap');
-
-/* @font-face {
-  font-family: myFont;
-  src: url(https://fonts.googleapis.com/css2?family=Oswald&display=swap);
-} */
 
 * {
   font-family: Oswald, sans-serif;

@@ -1,7 +1,10 @@
 {% layout 'layout.liquid' %}
 {% block content %}
-  <div class="container-md">
-    <h2>Are you sure you would like to log out?</h2>
+
+<div class="card text-center">
+  <div class="card-header"></div>
+  <div class="card-body">
+      <h2>Are you sure you would like to log out?</h2>
     <div class="btn-group">
       <a class="btn btn-info">Country roads, take me home.</a>
       <form action="/users/logout?_method=DELETE" method="POST">
@@ -9,4 +12,8 @@
       </form>
     </div>
   </div>
+  <div class="card-footer text-muted">
+  </div>
+</div>
+
 {% endblock %}

@@ -6,16 +6,12 @@ const UserRouter = require('./controllers/userController')
 const CommentRouter = require('./controllers/commentController')
 const middleware = require('./utils/middleware')
 
-/////////////////////////////////////////////
-// Create our Express Application Object
-/////////////////////////////////////////////
+
 const app = require('liquid-express-views')(express())
 
 middleware(app)
 app.use(express.static('public'));
-/////////////////////////////////////////////
-// Home Route
-/////////////////////////////////////////////
+
 app.get("/", (req, res) => {
     if (req.session.loggedIn) {
         res.redirect('/products')
@@ -39,8 +35,6 @@ app.all('*', (req, res) => {
     res.redirect('/error')
 })
 
-/////////////////////////////////////////////
-// Server Listener
-/////////////////////////////////////////////
+
 const PORT = process.env.PORT
 app.listen(PORT, () => console.log(`Single Source API: ${PORT}`))

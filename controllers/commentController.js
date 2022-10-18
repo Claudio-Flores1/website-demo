@@ -1,24 +1,14 @@
-////////////////////////////////////////
-// Import Dependencies
-////////////////////////////////////////
 const express = require("express")
 const Product = require("../models/product")
 
-/////////////////////////////////////////
-// Create Router
-/////////////////////////////////////////
 const router = express.Router()
 
-/////////////////////////////////////////////
-// Routes
-////////////////////////////////////////////
 // POST
 // only loggedIn users can post comments
 router.post("/:productId", (req, res) => {
     const productId = req.params.productId
 
     if (req.session.loggedIn) {
-        // we want to adjust req.body so that the author is automatically assigned
         req.body.author = req.session.userId
     } else {
         res.sendStatus(401)
@@ -37,10 +27,8 @@ router.post("/:productId", (req, res) => {
 // DELETE
 // only the author of the comment can delete it
 router.delete('/delete/:productId/:commId', (req, res) => {
-    // isolate the ids and save to vars for easy ref
     const productId = req.params.productId 
     const commId = req.params.commId
-    // get the fruit
     Product.findById(productId)
         .then(product => {
             const theComment = product.comments.id(commId)
@@ -63,7 +51,4 @@ router.delete('/delete/:productId/:commId', (req, res) => {
 
 })
 
-//////////////////////////////////////////
-// Export the Router
-//////////////////////////////////////////
 module.exports = router

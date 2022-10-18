@@ -1,17 +1,8 @@
-////////////////////////////////////////
-// Import Dependencies
-////////////////////////////////////////
 const express = require("express")
 const Product = require("../models/product")
 
-/////////////////////////////////////////
-// Create Route
-/////////////////////////////////////////
 const router = express.Router()
 
-/////////////////////////////////////////////
-// Routes
-////////////////////////////////////////////
 
 router.get("/", (req, res) => {
     const username = req.session.username
@@ -36,9 +27,7 @@ router.get("/", (req, res) => {
 })
 
 
-///////// FIX THIS
 router.post("/", (req, res) => {
-    // console.log("req.body initially", req.body)
     req.body.updated = req.body.updated === 'on' ? true : false
     req.body.waterProof = req.body.waterProof === 'on' ? true : false
     console.log("req.body initially", req.body)
@@ -47,15 +36,11 @@ router.post("/", (req, res) => {
     .then(data => {
         res.json(data)
     })
-    // .then(() => {
-    //     res.redirect('/products/show')
-    // })
 })
-///////////// FIX THIS
+
 
 
 // GET for new fruit
-// renders the form to create a jacket
 router.get('/new', (req, res) => {
     const username = req.session.username
     const loggedIn = req.session.loggedIn
@@ -65,8 +50,6 @@ router.get('/new', (req, res) => {
 })
 
 // GET request
-// only products owned by logged in user
-// we're going to build another route, that is owner specific, to list all the fruits owned by a certain(logged in) user
 router.get('/mine', (req, res) => {
     Product.find({ owner: req.session.userId })
         .then(products => {
@@ -98,19 +81,16 @@ router.get("/edit/:id", (req, res) => {
 
 // POST request
 // CREATE route -> gives the ability to create new products
-// router.post("/", (req, res) => {
-//     req.body.waterProof = req.body.waterProof === 'on' ? true : false
-//     req.body.owner = req.session.userId
-//     console.log('the product from the form', req.body)
-//     Product.create(req.body)
-//         .then(product => {
-//             const username = req.session.username
-//             const loggedIn = req.session.loggedIn
-//             const userId = req.session.userId
-//             res.redirect('/products')
-//         })
-//         .catch(err => res.redirect(`/error?error=${err}`))
-// })
+router.post("/", (req, res) => {
+    req.body.updated = req.body.updated === 'on' ? true : false
+    req.body.waterProof = req.body.waterProof === 'on' ? true : false
+    console.log("req.body initially", req.body)
+    console.log('req.body after changing checkbox value', req.body)
+    Product.create(req.body)
+    .then(data => {
+        res.json(data)
+    })
+})
 
 // SHOW request
 // READ route -> finds and displays a single resource
@@ -150,7 +130,8 @@ router.put("/:id", (req, res) => {
         .catch(err => res.redirect(`/error?error=${err}`))
 })
 
-
+// DELETE REQUEST
+// DELETE route -> deletes a route
 router.delete('/:id', (req, res) => {
     const productId = req.params.id
 
@@ -163,7 +144,5 @@ router.delete('/:id', (req, res) => {
         })
 })
 
-//////////////////////////////////////////
-// Export the Router
-//////////////////////////////////////////
 module.exports = router
+

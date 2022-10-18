@@ -1,17 +1,30 @@
 {% layout 'layout.liquid' %}
 {% block content %}
 
-<div class="container-sm">
-    <form action="/users/login" method="POST">
-        <fieldset>
-            <legend>Welcome , Please log in to continue</legend>
-            <label class="form-label">Username: </label>
-            <input type="text" name="username" placeholder="username" class="form-control" required>
-            <label class="form-label">Password</label>
-            <input type="password" name="password" placeholder="enter password" class="form-control" required>
-        </fieldset>
-        <input type="submit" value="Log In" class="btn btn-success">
-    </form>
-</div>
+  <div class="col d-flex justify-content-center">
+    <div class="card text-center">
+      <div class="card-header">
+        BIRD UP
+      </div>
+      <div class="card-body">
+        <h6 class="card-title">Welcome to F/W training 22'</h6>
+        <h6 class="card-text">Let's get ready for the stoke!</h6>
+        <div class="container-sm">
+          <form action="/users/login" method="POST">
+            <fieldset>
+              <legend>Please log in to continue</legend>
+              <label class="form-label">Username:
+              </label>
+              <input type="text" name="username" placeholder="username" class="form-control" required>
+              <label class="form-label">Password</label>
+              <input type="password" name="password" placeholder="enter password" class="form-control" required>
+            </fieldset>
+            <input type="submit" value="Log In" class="btn btn-success">
+          </form>
+        </div>
+      </div>
+      <div class="card-footer text-muted">
+      </div>
+    </div>
 
 {% endblock %}

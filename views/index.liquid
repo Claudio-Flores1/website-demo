@@ -1,8 +1,17 @@
 {% layout 'layout.liquid' %}
 {% block content %}
-  <h1 class="display-4">Bird Up</h1>
-  <div class="btn-group btn-group-lg">
-    <a href="/users/signup" class="btn btn-success">Sign Up</a>
-    <a href="/users/login" class="btn btn-success">Login</a>
+
+  <div class="col d-flex justify-content-center" >
+    <div class="card bg-light mb-3" style="width: 48rem;">
+      <div class="card text-center"></div>
+      <div class="card-header">Flatiron's F/W Training</div>
+      <div class="card-body">
+        <h5 class="card-title">Sign in to access information <br> If not, feel free to sign up <br> Only takes 5 seconds!</h5>
+        <div class="btn-group btn-group-lg">
+          <a href="/users/signup" class="btn btn-dark">Sign Up</a>
+          <a href="/users/login" class="btn btn-success">Login</a>
+        </div>
+      </div>
+    </div>
   </div>
 {% endblock %}
