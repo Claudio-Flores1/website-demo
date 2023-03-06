@@ -1,7 +1,7 @@
 {
   "name": "mongoose-express-liquid-boilerplate",
   "version": "1.0.0",
-  "description": "",
+  "description": "Designed to effectively and quickly create a training template for a retail store team, this application will feature different decks that inside will contain information on specific products based on the activities they were designed to belong to. Inside of each deck, the user will find a product, along with any information and descriptions of the product, including updates for the new season, partnered together with an image.",
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -9,7 +9,7 @@
     "seed": "node models/seed.js"
   },
   "keywords": [],
-  "author": "",
+  "author": "Claudio Flores",
   "license": "ISC",
   "dependencies": {
     "bcryptjs": "^2.4.3",
@@ -22,5 +22,6 @@
     "method-override": "^3.0.0",
     "mongoose": "^6.2.4",
     "morgan": "^1.10.0"
-  }
+  },
+  "devDependencies": {}
 }

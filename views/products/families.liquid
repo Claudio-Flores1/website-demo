@@ -1,16 +1,32 @@
 {% layout 'layout.liquid' %}
 {% block content %}
+  <div style="margin-top:55px"></div>
+  <div class="card bg-dark text-black">
+    <img
+      class="card-img"
+      src="https://lh3.googleusercontent.com/pw/AMWts8AlDuVJofyoTSD6e2wO-KPBuoNNO88_7XTvztOKBaFBmoEfHawhXv7BsY65dAH88aqMZmhdZ5Ks8gw-LwODr-goYp7p-b-Um0h3I7TKhC-GZCPzvDC67YtmjjFxB1fuEZ7v8NUnrlfSJ_bsKbMQpgMwFhFPML3oNdzI4LFB8am7zWTQNxx8mtn4Jq7miF8jrQGxrvkB5L2tPgTPc2lIH6DVJ3JvDW2HxZqI17d7GewV8YCwz43gktFkNk8CpPc675J1WOMLhc_3XIxwrPJpZmjB3x01I4cCr-QUUU1Q76Ck69pZfY86Zm2SZHiUxn29DQdXoKSheuSnhKowmLwfjR8UfnuXUfjoWOF6YdbGt1q5RgYF8mBE7xE2vaYnN0xi-XhZqxBjETzo96cHDbGy88Et2IU1L9nLLOsmIuxARrrOxxm4iPZ_e3DWHWQEt71suduHydlu3a85lylj_YiQ5uO0urnG0Pin7ElbOPhj_IhDQEUoFmgaaoxmUCUIvSgWHvp-pdZfvI4RDTyCMnD4zrFcKHNn284GPILhSEmywGPrDEgAw4cRmxScDdRpug0inGL7yjXZ4EJFBbPjgmVvqPCTI9RQuKYLIaucXOoHaDDV6M5oVStd35dGZKBMROm0vRLwIFc9mYQb_ZzO1nfyuWHRnc_PLOiaSzv_HJ6qohm1V-PkK7hlIxV6j7wfQUeGUaTCM3l7Ymny7F-nBMWHAOUEE6Ml3x8uz-xYGIcqhqe3fFW_u4Uwth4radI_UUxJxS2jj2wv368BXMCcU8cgQqOzl9K4kG-R8koc0-YR0cUduvwzpuapYBF2s0hJ8J-XQ6JPw9gGSmi7SJES2i9RopsT8E5CuuUpRaBC_veWg6otzCbg6oQTaNRwcV1AF6SRQAwAqo-hIEHwIAeW32PwyZ_Hq8JkzldQbVjIWjVCaxo5AHxPBTBoZ7gJDtzpRcqhzJw=w305-h229-no?authuser=0"
+      alt="Card image">
+    <div class="card-img-overlay">
+      <div style="margin-top:15px"></div>
+      <h5 class="card-title"> Welcome to T.P Outfitters</h5>
+      <p class="card-text"> We understand there might be gear you no <br> longer need that still has a ton of life left in <br> it. That's where we come in, welcome to the <br> first Outdoor Apparel online open market! <br> Think of us as your friendly outdoors ebay, a <br> spot where you can make sure your old gear <br> ends up with someone who can still use it. <br> 
+      One person's trash is another's summit piece!</p>
+      <br>
+      <p class="card-text-bottom">Look out for community events near you!</p>
+    </div>
+  </div>
+  <div style="margin-top:165px"></div>
   <div>
-    <h2 class="display-4">F/W 22'</h2>
+    <h2 class="display-4">Clothing Categories</h2>
     <div class="row">
       {% for family in families %}
         <div class="col-4">
           <div class="card mb-3" style="">
-            <h5 class="card-header">{{family}} 
+            <h5 class="card-header">{{ family }}
             </h5>
             <div class="card-body">
               <a class="btn btn-info" href="/products?family={{family}}">
-                View 
+                View
               </a>
             </div>
           </div>

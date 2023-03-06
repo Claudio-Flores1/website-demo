@@ -8,9 +8,9 @@ const { Schema, model } = mongoose
 const productSchema = new Schema({
     name: String,
     color: String,
-    waterProof: Boolean,
-    family: String,
-    updated: Boolean,
+    price: Number,
+    // family: String,
+    // updated: Boolean,
     info: String,
     owner: {
         type: Schema.Types.ObjectId,

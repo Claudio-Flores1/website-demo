@@ -29,9 +29,9 @@ router.get("/", (req, res) => {
 
 router.post("/", (req, res) => {
     req.body.updated = req.body.updated === 'on' ? true : false
-    req.body.waterProof = req.body.waterProof === 'on' ? true : false
-    console.log("req.body initially", req.body)
-    console.log('req.body after changing checkbox value', req.body)
+    // req.body.waterProof = req.body.waterProof === 'on' ? true : false
+    // console.log("req.body initially", req.body)
+    // console.log('req.body after changing checkbox value', req.body)
     Product.create(req.body)
     .then(data => {
         res.json(data)
@@ -83,9 +83,9 @@ router.get("/edit/:id", (req, res) => {
 // CREATE route -> gives the ability to create new products
 router.post("/", (req, res) => {
     req.body.updated = req.body.updated === 'on' ? true : false
-    req.body.waterProof = req.body.waterProof === 'on' ? true : false
-    console.log("req.body initially", req.body)
-    console.log('req.body after changing checkbox value', req.body)
+    // req.body.waterProof = req.body.waterProof === 'on' ? true : false
+    // console.log("req.body initially", req.body)
+    // console.log('req.body after changing checkbox value', req.body)
     Product.create(req.body)
     .then(data => {
         res.json(data)
