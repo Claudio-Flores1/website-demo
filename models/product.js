@@ -9,8 +9,6 @@ const productSchema = new Schema({
     name: String,
     color: String,
     price: Number,
-    // family: String,
-    // updated: Boolean,
     info: String,
     owner: {
         type: Schema.Types.ObjectId,
