@@ -4,13 +4,9 @@
         <article>
             <h2>{{product.name}}</h2>
             <h4>
-                {% if product.waterProof %}
-                    GoreTex
-                {% else %}
-                    Not Waterproof
-                {% endif %}
+                INSERT PRODUCT IMAGE HERE
             </h4>
-            <h6>The color of this Product is: {{product.color}}</h6>
+            <h6>{{product.color}}</h6>
             {% if product.owner == userId %}
                 <div class="btn-group">
                     <a class="btn btn-primary" href="/products/edit/{{product.id}}">Edit</a>
@@ -27,7 +23,7 @@
                                 <br>
                                 {{ product.info }}
                             {% else %}
-                                It hasn't been updated yet, maybe next year something will change
+                                ADD SOMETHING HERE LATER
                             {% endif %}
                         </h6>
         <hr>
@@ -35,16 +31,16 @@
             <div class="col-md-6">
                 <form action="/comments/{{product.id}}" method="POST">
                     <fieldset>
-                        <legend>Add Comment</legend>
-                        <label class="form-label">comment:</label>
-                        <input class="form-control" type="text" placeholder="Create a new comment" name="note" required>
+                        <legend>Leave a review</legend>
+                        <label class="form-label">Review:</label>
+                        <input class="form-control" type="text" placeholder="...." name="note" required>
                     </fieldset>
-                    <input class="btn btn-success" type="submit" value="add comment">
+                    <input class="btn btn-success" type="submit" value="Submit">
                 </form>
             </div>
         {% else %}
             <div class="col-md-6">
-                <small>If you'd like to leave a comment, please log in...</small>
+                <small>If you'd like to leave a review, please log in...</small>
             </div>
         {% endif %}
         <hr>

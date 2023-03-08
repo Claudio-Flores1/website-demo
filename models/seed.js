@@ -5,7 +5,10 @@ const db = mongoose.connection
 
 db.on('open', () => {
     const startProducts = [
-        { name: "Andessa", color: "Black, Techno, & Atmos", price: $1, info: "something here"},
+        { name: "Andessa", color: "Black", brand: "Arc'teryx", family: "Jackets", price: "$1", info: "Heavyweight winter parka for Women. Down Insulated and water proof", condition: "lightly worn"},
+        { name: "Better Sweater", color: "white", brand: "Patagonia", family: "Sweaters", price: "$13", info: "Synthetic sweates for the wall street bros", condition: "barely used"},
+        { name: "Mountain Light Boots", color: "Brown Leather", brand: "Danner", family: "Footwear", price: "$231", info: "It's THE HIKING BOOT, this boot is the granddaddy of them all.", condition: "minor wear and tear"},
+        { name: "Cobra 65 Pack", color: "White", brand: "The North Face", family: "Packs", price: "$134", info: "65L Backpack made to tackle the harshest conditions nature can throw at you.", condition: "used"},
     ]
 
     Product.deleteMany({})

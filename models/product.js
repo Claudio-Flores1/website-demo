@@ -8,8 +8,11 @@ const { Schema, model } = mongoose
 const productSchema = new Schema({
     name: String,
     color: String,
-    price: Number,
+    brand: String,
+    family: String,
+    price: String,
     info: String,
+    condition: String,
     owner: {
         type: Schema.Types.ObjectId,
         ref: 'User'

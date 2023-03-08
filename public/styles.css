@@ -41,6 +41,33 @@
   word-wrap: normal;
 }
 
+
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 999;
+}
+
+#content {
+  margin-top: 100px;
+}
+
 .navbar-brand {
   max-height: 100px;
+}
+
+.card-text-2, .card-title-2, .card-text-3 {
+  color: black;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+.card-text-2 {
+  font-size: 18px;
+  font-weight: 100;
+}
+
+.card-title-2 {
+  font-size: 22px;
+  font-weight: 600;
+  border-radius: 15;
 }
