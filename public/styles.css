@@ -51,8 +51,8 @@
   top: 0;
   z-index: 999;
   height: 100px;
-  background-color: antiquewhite;
-  
+  background-color: whitesmoke;
+  /* border-bottom: solid 4px antiquewhite; */
 }
 
 #content {
@@ -61,11 +61,15 @@
 
 .navbar-brand {
   font-size: xx-large;
+  justify-content: center;
   max-height: 100px;
   color: black;
+  display: flex !important;
 }
 
-.card-text-2, .card-title-2, .card-text-3 {
+.card-text-2,
+.card-title-2,
+.card-text-3 {
   color: black;
   font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
@@ -80,11 +84,34 @@
   font-weight: 100;
   /* border-radius: 99; */
 }
+
 .bottom-img {
   width: 565px;
   height: 365px;
 }
 
-/* .card-body-1 {
-  
-} */
+.card-img-categories {
+  width: 265px;
+  height: 165px;
+}
+
+/* DOES NOT DO ANYTHING RIGHT NOW */
+.index-card {
+  margin-top: 10rem;
+}
+
+.index-header {
+  border-bottom: solid 1.5px black;
+  font-size: 22px;
+  text-align: left;
+}
+
+.index-title {
+  font-size: 28px;
+  color: black;
+  text-align: center;
+}
+
+.index-btn-group {
+  margin-left: 18rem;
+}

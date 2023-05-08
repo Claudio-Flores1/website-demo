@@ -1,26 +1,27 @@
 {% layout 'layout.liquid' %}
 {% block content %}
-    <div>
-        <h2 class="display-6">{{product.name}}</h2>
-        <div class="row">
-            {% for product in products %}
-                <div class="card" style="width: 20rem">
-                    <h5 class="card-header">{{product.name}}</h5>
-                    <div class="card-body">
-                        <h5 class="card-product">
-                            INSERT PRODUCT IMAGE
-                        </h5>
-                        <p class="card-text-3">ADD STUFF HERE LATER</p>
-                        <p class="card-text-3">ADD STUFF HERE LATER</p>
-                         <h6 class="card-product">
-                           ADD STUFF HERE LATER
-                        </h6>
-                        <a class="btn btn-info" href="/products/{{product.id}}">
-                            View
-                        </a>
-                    </div>
-                </div>
-            {% endfor %}
+  <div>
+    <h2 class="display-6">{{ product.name }}</h2>
+    <div class="row">
+      {% for product in products %}
+        <div class="card" style="width: 20rem">
+          <h5 class="card-header">{{ product.name }}</h5>
+          <div class="card-body">
+            <img
+              class="card-img"
+              src="https://media.istockphoto.com/id/931042070/vector/website-construction-line-style-illustration.jpg?s=612x612&w=is&k=20&c=nUuYoZxobPuitaSBN0AtOTTz_CIevEiszvFFdjQNhXs="
+              alt="Card image">
+            <p class="card-text-3">ADD STUFF HERE LATER</p>
+            <p class="card-text-3">ADD STUFF HERE LATER</p>
+            <h6 class="card-product">
+              ADD STUFF HERE LATER
+            </h6>
+            <a class="btn btn-info" href="/products/{{product.id}}">
+              View
+            </a>
+          </div>
         </div>
+      {% endfor %}
     </div>
+  </div>
 {% endblock %}

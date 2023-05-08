@@ -40,13 +40,13 @@ router.post("/", (req, res) => {
 
 
 
-// GET for new fruit
-router.get('/new', (req, res) => {
+// GET for info page
+router.get('/info', (req, res) => {
     const username = req.session.username
     const loggedIn = req.session.loggedIn
     const userId = req.session.userId
 
-    res.render('products/new', { username, loggedIn, userId })
+    res.render('products/info', { username, loggedIn, userId })
 })
 
 // GET request

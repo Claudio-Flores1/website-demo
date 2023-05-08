@@ -13,6 +13,7 @@ const productSchema = new Schema({
     price: String,
     info: String,
     condition: String,
+    picture: String,
     owner: {
         type: Schema.Types.ObjectId,
         ref: 'User'

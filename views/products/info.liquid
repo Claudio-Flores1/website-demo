@@ -1,7 +1,48 @@
 {% layout 'layout.liquid' %}
 {% block content %}
-    <div>
-        <h2 class="display-6">{{product.name}}</h2>
-        </div>
-    </div>
+
+  <div class="container-sm">
+    <form action="/products" method="POST">
+      <fieldset>
+        <legend>Did we forget something? Fill out the form and let us know!</legend>
+        <label class="form-label">Name:
+        </label>
+        <input
+          class="form-control"
+          type="text"
+          name="name"
+          placeholder="product name">
+
+        <label class="form-label">Color:
+        </label>
+        <input
+          class="form-control"
+          type="text"
+          name="color"
+          placeholder="product color">
+
+        <label class="form-label">Price:
+        </label>
+        <input
+          class="form-control"
+          type="text"
+          name="price"
+          placeholder="price">
+
+        <label class="form-label">Info:
+        </label>
+        <input
+          class="form-control"
+          type="text"
+          name="info"
+          type="info"
+          placeholder="info">
+      </fieldset>
+      <input
+        class="btn btn-info"
+        type="submit"
+        value="Submit">
+    </form>
+  </div>
+
 {% endblock %}
