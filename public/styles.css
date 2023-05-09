@@ -115,3 +115,9 @@
 .index-btn-group {
   margin-left: 18rem;
 }
+
+/* INFO PAGE */
+.info-title {
+  
+  display: flex;
+}

@@ -1,48 +1,9 @@
 {% layout 'layout.liquid' %}
 {% block content %}
 
-  <div class="container-sm">
-    <form action="/products" method="POST">
-      <fieldset>
-        <legend>Did we forget something? Fill out the form and let us know!</legend>
-        <label class="form-label">Name:
-        </label>
-        <input
-          class="form-control"
-          type="text"
-          name="name"
-          placeholder="product name">
-
-        <label class="form-label">Color:
-        </label>
-        <input
-          class="form-control"
-          type="text"
-          name="color"
-          placeholder="product color">
-
-        <label class="form-label">Price:
-        </label>
-        <input
-          class="form-control"
-          type="text"
-          name="price"
-          placeholder="price">
-
-        <label class="form-label">Info:
-        </label>
-        <input
-          class="form-control"
-          type="text"
-          name="info"
-          type="info"
-          placeholder="info">
-      </fieldset>
-      <input
-        class="btn btn-info"
-        type="submit"
-        value="Submit">
-    </form>
+  <div class="info-page">
+    <h1 class="info-title"> Who we are.</h1>
+    <p> In an ever growing, over saturated market, we strive to bring products not typically seen on the market. With over 6 and a half million people in it's borders, El salvador is not normally something that people think of when they imagine a lifestyle brand. Segundo is looking to change that by allowing customers to own something unique. We're not looking to 'disrupt the market', we're just looking to share our creations with the world. <br> Made in the US, inspired by the world</p>
   </div>
 
 {% endblock %}

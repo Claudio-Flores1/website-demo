@@ -38,7 +38,13 @@ router.post("/", (req, res) => {
     })
 })
 
+router.get('/products', (req, res) => {
+    const username = req.session.username
+    const loggedIn = req.session.loggedIn
+    const userId = req.session.userId
 
+    res.render('products/products', { username, loggedIn, userId })
+})
 
 // GET for info page
 router.get('/info', (req, res) => {
